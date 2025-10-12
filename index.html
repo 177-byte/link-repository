@@ -149,6 +149,47 @@
         .no-results.show {
             display: block;
         }
+
+        .section-title {
+            color: white;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin: 40px 0 20px 0;
+            padding-left: 10px;
+            border-left: 5px solid white;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .form-card.highlighted {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: 3px solid #fff;
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .form-card.highlighted .form-title,
+        .form-card.highlighted .form-description {
+            color: white;
+        }
+
+        .form-card.highlighted .form-icon {
+            background: white;
+            color: #667eea;
+        }
+
+        .form-card.highlighted .form-link {
+            background: white;
+            color: #667eea;
+            border-color: white;
+        }
+
+        .form-card.highlighted .form-link:hover {
+            background: rgba(255, 255, 255, 0.9);
+            color: #764ba2;
+        }
     </style>
 </head>
 <body>
@@ -160,38 +201,40 @@
 
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="🔍 Search forms...">
-        </div> 
+        </div>
 
-            <div class="form-card" data-title="Daily SAW Activity Feedback" data-desc="feedback form submit">
+        <div class="section-title">📝 General Forms</div>
+        <div class="forms-grid" id="formsGrid">
+            <div class="form-card highlighted" data-title="daily saw activity feedback" data-desc="feedback form submit">
                 <div class="form-icon">💬</div>
                 <div class="form-title">Daily SAW Activity Feedback</div>
                 <div class="form-description">Submit your feedback and evaluation for SAW work activities.</div>
                 <a href="https://docs.google.com/forms/u/0/d/1slj6eZTCrI0v-MkvXju3LCRmNYnf9lHSLXWbLKE__j0/viewform?edit_requested=true" class="form-link" target="_blank">Open Form →</a>
             </div>
 
-            <div class="form-card" data-title="Record Protocol Signature" data-desc="documents upload submit">
+            <div class="form-card highlighted" data-title="record protocol signature" data-desc="documents upload submit protocol">
                 <div class="form-icon">📄</div>
                 <div class="form-title">Record Protocol Signature</div>
                 <div class="form-description">Upload and update SAW related documents and materials.</div>
                 <a href="https://docs.google.com/forms/d/1pbQrDKXL7TrhRiYomvVaXLpCUOzohwfFl4Z0xmAuCUc/viewform?edit_requested=true#responses" class="form-link" target="_blank">Open Form →</a>
             </div>
+        </div>
 
-        <div class="forms-grid" id="formsGrid">
-            <div class="form-card" data-title="leave information" data-desc="leave status check view">
+        <div class="section-title">🔒 NOMCS Personnel Only</div>
+        <div class="forms-grid">
+            <div class="form-card" data-title="leave information" data-desc="leave status check view nomcs personnel">
                 <div class="form-icon">📊</div>
                 <div class="form-title">Leave Information</div>
-                <div class="form-description"> Only for NOMCS Personnel.View leave records, status, and availability information.</div>
+                <div class="form-description">View leave records, status, and availability information.</div>
                 <a href="https://docs.google.com/spreadsheets/d/1H73LaZm5efParlDrC9HvL-yJzS5EE7otSRCv1hHz4sg/edit?usp=sharing" class="form-link" target="_blank">View Sheet →</a>
             </div>
 
-            
-            <div class="form-card" data-title="site visit assignment" data-desc="assignment visit schedule">
+            <div class="form-card" data-title="site visit assignment" data-desc="assignment visit schedule nomcs personnel">
                 <div class="form-icon">📍</div>
                 <div class="form-title">Site Visit Assignment</div>
-                <div class="form-description">Only for NOMCS Personnel. Access site visit assignments and scheduling information.</div>
-                <a href="https://docs.google.com/spreadsheets/d/1WmwM9_aI3dB30IQ3d3eJAbK2k-6RoPV8/edit?usp=sharing&ouid=106246408292021722355&rtpof=true&sd=true" class="form-link" target="_blank">Open Form →</a>
+                <div class="form-description">Access site visit assignments and scheduling information.</div>
+                <a href="https://docs.google.com/spreadsheets/d/1WmwM9_aI3dB30IQ3d3eJAbK2k-6RoPV8/edit?usp=sharing&ouid=106246408292021722355&rtpof=true&sd=true" class="form-link" target="_blank">View Sheet →</a>
             </div>
-            
         </div>
 
         <div class="no-results" id="noResults">
@@ -203,6 +246,7 @@
         const searchInput = document.getElementById('searchInput');
         const formCards = document.querySelectorAll('.form-card');
         const noResults = document.getElementById('noResults');
+        const sections = document.querySelectorAll('.section-title');
 
         searchInput.addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
@@ -220,6 +264,13 @@
                     card.classList.add('hidden');
                 }
             });
+
+            // Hide/show section titles based on search
+            if (searchTerm) {
+                sections.forEach(section => section.style.display = 'none');
+            } else {
+                sections.forEach(section => section.style.display = 'block');
+            }
 
             if (visibleCount === 0) {
                 noResults.classList.add('show');
