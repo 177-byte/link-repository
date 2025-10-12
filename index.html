@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms Directory</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            outline: none;
+        }
+
+        .search-box input:focus {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .forms-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .form-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .form-card.hidden {
+            display: none;
+        }
+
+        .form-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .form-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .form-description {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .form-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 20px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .form-link:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .no-results {
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            padding: 40px;
+            display: none;
+        }
+
+        .no-results.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Forms Directory</h1>
+            <p>Select the form you need from the options below</p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 Search forms...">
+        </div>
+
+        <div class="forms-grid" id="formsGrid">
+            <!-- Example Form Cards - Replace with your actual forms -->
+            <div class="form-card" data-title="contact form" data-desc="general inquiries">
+                <div class="form-icon">📧</div>
+                <div class="form-title">Contact Form</div>
+                <div class="form-description">For general inquiries, questions, and getting in touch with our team.</div>
+                <a href="YOUR_FORM_LINK_HERE" class="form-link" target="_blank">Open Form →</a>
+            </div>
+
+            <div class="form-card" data-title="feedback survey" data-desc="suggestions opinions">
+                <div class="form-icon">💬</div>
+                <div class="form-title">Feedback Survey</div>
+                <div class="form-description">Share your feedback, suggestions, and help us improve our services.</div>
+                <a href="YOUR_FORM_LINK_HERE" class="form-link" target="_blank">Open Form →</a>
+            </div>
+
+            <div class="form-card" data-title="registration form" data-desc="signup enroll">
+                <div class="form-icon">📝</div>
+                <div class="form-title">Registration Form</div>
+                <div class="form-description">Register for events, programs, or sign up for our services.</div>
+                <a href="YOUR_FORM_LINK_HERE" class="form-link" target="_blank">Open Form →</a>
+            </div>
+
+            <div class="form-card" data-title="support request" data-desc="help technical issue">
+                <div class="form-icon">🔧</div>
+                <div class="form-title">Support Request</div>
+                <div class="form-description">Submit technical issues, bug reports, or request assistance.</div>
+                <a href="YOUR_FORM_LINK_HERE" class="form-link" target="_blank">Open Form →</a>
+            </div>
+
+            <div class="form-card" data-title="appointment booking" data-desc="schedule meeting">
+                <div class="form-icon">📅</div>
+                <div class="form-title">Appointment Booking</div>
+                <div class="form-description">Schedule meetings, consultations, or book your appointment slot.</div>
+                <a href="YOUR_FORM_LINK_HERE" class="form-link" target="_blank">Open Form →</a>
+            </div>
+
+            <div class="form-card" data-title="job application" data-desc="career vacancy employment">
+                <div class="form-icon">💼</div>
+                <div class="form-title">Job Application</div>
+                <div class="form-description">Apply for open positions and submit your resume to join our team.</div>
+                <a href="YOUR_FORM_LINK_HERE" class="form-link" target="_blank">Open Form →</a>
+            </div>
+        </div>
+
+        <div class="no-results" id="noResults">
+            No forms found matching your search.
+        </div>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const formCards = document.querySelectorAll('.form-card');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            let visibleCount = 0;
+
+            formCards.forEach(card => {
+                const title = card.getAttribute('data-title');
+                const desc = card.getAttribute('data-desc');
+                const cardText = card.textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || desc.includes(searchTerm) || cardText.includes(searchTerm)) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.classList.add('show');
+            } else {
+                noResults.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
