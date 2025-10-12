@@ -126,6 +126,18 @@
             color: white;
         }
 
+        .form-link.disabled {
+            background: #e0e0e0;
+            color: #999;
+            border-color: #e0e0e0;
+            cursor: not-allowed;
+        }
+
+        .form-link.disabled:hover {
+            background: #e0e0e0;
+            color: #999;
+        }
+
         .no-results {
             text-align: center;
             color: white;
@@ -151,47 +163,32 @@
         </div>
 
         <div class="forms-grid" id="formsGrid">
-            <!-- Example Form Cards - Replace with your actual forms -->
-            <div class="form-card" data-title="contact form" data-desc="general inquiries">
-                <div class="form-icon">📧</div>
-                <div class="form-title">Contact Form</div>
-                <div class="form-description">For general inquiries, questions, and getting in touch with our team.</div>
-                <a href="YOUR_FORM_LINK_HERE" class="form-link" target="_blank">Open Form →</a>
+            <div class="form-card" data-title="leave information" data-desc="leave status check view">
+                <div class="form-icon">📊</div>
+                <div class="form-title">Leave Information</div>
+                <div class="form-description">View leave records, status, and availability information.</div>
+                <a href="https://docs.google.com/spreadsheets/d/1H73LaZm5efParlDrC9HvL-yJzS5EE7otSRCv1hHz4sg/edit?usp=sharing" class="form-link" target="_blank">View Sheet →</a>
             </div>
 
-            <div class="form-card" data-title="feedback survey" data-desc="suggestions opinions">
+            <div class="form-card" data-title="saw work feedback" data-desc="feedback form submit">
                 <div class="form-icon">💬</div>
-                <div class="form-title">Feedback Survey</div>
-                <div class="form-description">Share your feedback, suggestions, and help us improve our services.</div>
-                <a href="YOUR_FORM_LINK_HERE" class="form-link" target="_blank">Open Form →</a>
+                <div class="form-title">SAW Work Feedback</div>
+                <div class="form-description">Submit your feedback and evaluation for SAW work activities.</div>
+                <a href="https://docs.google.com/forms/u/0/d/1slj6eZTCrI0v-MkvXju3LCRmNYnf9lHSLXWbLKE__j0/viewform?edit_requested=true" class="form-link" target="_blank">Open Form →</a>
             </div>
 
-            <div class="form-card" data-title="registration form" data-desc="signup enroll">
-                <div class="form-icon">📝</div>
-                <div class="form-title">Registration Form</div>
-                <div class="form-description">Register for events, programs, or sign up for our services.</div>
-                <a href="YOUR_FORM_LINK_HERE" class="form-link" target="_blank">Open Form →</a>
+            <div class="form-card" data-title="site visit assignment" data-desc="assignment visit schedule">
+                <div class="form-icon">📍</div>
+                <div class="form-title">Site Visit Assignment</div>
+                <div class="form-description">Access site visit assignments and scheduling information.</div>
+                <a href="#" class="form-link disabled" onclick="return false;">Coming Soon</a>
             </div>
 
-            <div class="form-card" data-title="support request" data-desc="help technical issue">
-                <div class="form-icon">🔧</div>
-                <div class="form-title">Support Request</div>
-                <div class="form-description">Submit technical issues, bug reports, or request assistance.</div>
-                <a href="YOUR_FORM_LINK_HERE" class="form-link" target="_blank">Open Form →</a>
-            </div>
-
-            <div class="form-card" data-title="appointment booking" data-desc="schedule meeting">
-                <div class="form-icon">📅</div>
-                <div class="form-title">Appointment Booking</div>
-                <div class="form-description">Schedule meetings, consultations, or book your appointment slot.</div>
-                <a href="YOUR_FORM_LINK_HERE" class="form-link" target="_blank">Open Form →</a>
-            </div>
-
-            <div class="form-card" data-title="job application" data-desc="career vacancy employment">
-                <div class="form-icon">💼</div>
-                <div class="form-title">Job Application</div>
-                <div class="form-description">Apply for open positions and submit your resume to join our team.</div>
-                <a href="YOUR_FORM_LINK_HERE" class="form-link" target="_blank">Open Form →</a>
+            <div class="form-card" data-title="saw documents update" data-desc="documents upload submit">
+                <div class="form-icon">📄</div>
+                <div class="form-title">SAW Documents Update</div>
+                <div class="form-description">Upload and update SAW related documents and materials.</div>
+                <a href="#" class="form-link disabled" onclick="return false;">Coming Soon</a>
             </div>
         </div>
 
