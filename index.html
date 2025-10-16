@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f5f5f5;
             min-height: 100vh;
             padding: 20px;
         }
@@ -25,7 +25,7 @@
 
         .header {
             text-align: center;
-            color: white;
+            color: #202124;
             margin-bottom: 40px;
             padding: 20px;
         }
@@ -33,12 +33,12 @@
         .header h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: none;
         }
 
         .header p {
             font-size: 1.1em;
-            opacity: 0.9;
+            opacity: 0.7;
         }
 
         .search-box {
@@ -68,32 +68,25 @@
 
         .form-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 8px;
             padding: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             transition: all 0.3s ease;
             cursor: pointer;
+            border-left: 4px solid #0b8043;
         }
 
         .form-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.16), 0 4px 8px rgba(0,0,0,0.23);
         }
 
         .form-card.hidden {
             display: none;
         }
 
-        .form-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-            font-size: 24px;
+        .form-card.form-type {
+            border-left-color: #673ab7;
         }
 
         .form-title {
@@ -112,17 +105,17 @@
 
         .form-link {
             display: inline-block;
-            color: #667eea;
+            color: #1a73e8;
             text-decoration: none;
             font-weight: 500;
             padding: 8px 20px;
-            border: 2px solid #667eea;
-            border-radius: 25px;
+            border: 2px solid #1a73e8;
+            border-radius: 4px;
             transition: all 0.3s ease;
         }
 
         .form-link:hover {
-            background: #667eea;
+            background: #1a73e8;
             color: white;
         }
 
@@ -140,7 +133,7 @@
 
         .no-results {
             text-align: center;
-            color: white;
+            color: #5f6368;
             font-size: 1.2em;
             padding: 40px;
             display: none;
@@ -151,12 +144,12 @@
         }
 
         .section-title {
-            color: white;
+            color: #202124;
             font-size: 1.5em;
             font-weight: 600;
             margin: 40px 0 20px 0;
             padding-left: 10px;
-            border-left: 5px solid white;
+            border-left: 5px solid #1a73e8;
         }
 
         .section-title:first-of-type {
@@ -164,31 +157,26 @@
         }
 
         .form-card.highlighted {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: 3px solid #fff;
-            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+            background: white;
+            color: #202124;
+            border-left: 4px solid #673ab7;
+            box-shadow: 0 2px 6px rgba(103, 58, 183, 0.3);
         }
 
         .form-card.highlighted .form-title,
         .form-card.highlighted .form-description {
-            color: white;
-        }
-
-        .form-card.highlighted .form-icon {
-            background: white;
-            color: #667eea;
+            color: #202124;
         }
 
         .form-card.highlighted .form-link {
-            background: white;
-            color: #667eea;
-            border-color: white;
+            background: #673ab7;
+            color: white;
+            border-color: #673ab7;
         }
 
         .form-card.highlighted .form-link:hover {
-            background: rgba(255, 255, 255, 0.9);
-            color: #764ba2;
+            background: #5e35b1;
+            color: white;
         }
     </style>
 </head>
@@ -206,17 +194,12 @@
         <div class="section-title">📝 General Forms</div>
         <div class="forms-grid" id="formsGrid">
             <div class="form-card highlighted" data-title="daily saw activity feedback" data-desc="feedback form submit">
-                <div class="form-icon"><div class="form-icon"><img src="https://ssl.gstatic.com/docs/templates/thumbnails/forms-blank-googlecolors.png" alt="Forms" style="width: 35px; height: 35px;"></div>
-                
-                </div>
                 <div class="form-title">Daily SAW Activity Feedback</div>
                 <div class="form-description">Submit your feedback and evaluation for SAW work activities.</div>
                 <a href="https://docs.google.com/forms/u/0/d/1slj6eZTCrI0v-MkvXju3LCRmNYnf9lHSLXWbLKE__j0/viewform?edit_requested=true" class="form-link" target="_blank">Open Form →</a>
             </div>
 
             <div class="form-card highlighted" data-title="record protocol signature" data-desc="documents upload submit protocol">
-                <div class="form-icon"><div class="form-icon"><img src="https://ssl.gstatic.com/docs/templates/thumbnails/forms-blank-googlecolors.png" alt="Forms" style="width: 35px; height: 35px;"></div>
-                </div>
                 <div class="form-title">Record Protocol Signature</div>
                 <div class="form-description">Upload and update SAW related documents and materials.</div>
                 <a href="https://docs.google.com/forms/d/1pbQrDKXL7TrhRiYomvVaXLpCUOzohwfFl4Z0xmAuCUc/viewform?edit_requested=true#responses" class="form-link" target="_blank">Open Form →</a>
@@ -226,32 +209,29 @@
         <div class="section-title">🔒 NOMCS Personnel Only</div>
         <div class="forms-grid">
             <div class="form-card" data-title="leave information" data-desc="leave status check view nomcs personnel">
-                <div class="form-icon">📊</div>
                 <div class="form-title">Leave Information</div>
                 <div class="form-description">View leave records, status, and availability information.</div>
                 <a href="https://docs.google.com/spreadsheets/d/1H73LaZm5efParlDrC9HvL-yJzS5EE7otSRCv1hHz4sg/edit?usp=sharing" class="form-link" target="_blank">View Sheet →</a>
             </div>
 
             <div class="form-card" data-title="site visit assignment" data-desc="assignment visit schedule nomcs personnel">
-                <div class="form-icon">📍</div>
                 <div class="form-title">Site Visit Assignment</div>
                 <div class="form-description">Access site visit assignments and scheduling information.</div>
                 <a href="https://docs.google.com/spreadsheets/d/1WmwM9_aI3dB30IQ3d3eJAbK2k-6RoPV8/edit?usp=sharing&ouid=106246408292021722355&rtpof=true&sd=true" class="form-link" target="_blank">View Sheet →</a>
             </div>
-        <div class="form-card" data-title="last week saw works" data-desc="weekly saw activities records">
-    <div class="form-icon">📅</div>
-    <div class="form-title">Last Week SAW Works</div>
-    <div class="form-description">View last week's SAW work activities and completed tasks.</div>
-    <a href="https://docs.google.com/spreadsheets/d/1X-MNy0NTifGuB7iSXcfjdncdHk1J2hujM0oi4j-0Rww/edit?gid=0#gid=0" class="form-link" target="_blank">View Sheet →</a>
-            </div>     
-            <div class="form-card" data-title="Document Approval Log" data-desc="Document Approval Log">
-    <div class="form-icon">📅</div>
-    <div class="form-title">Document Approval Log</div>
-    <div class="form-description">View approved documents log/</div>
-    <a href="https://docs.google.com/spreadsheets/d/18KZmM16zXQjUOTTIJ6pbmoultOPCdKl3FxTYs4VxUbU/edit?gid=1272537285#gid=1272537285" class="form-link" target="_blank">View Sheet →</a>
+
+            <div class="form-card" data-title="last week saw works" data-desc="weekly saw activities records">
+                <div class="form-title">Last Week SAW Works</div>
+                <div class="form-description">View last week's SAW work activities and completed tasks.</div>
+                <a href="https://docs.google.com/spreadsheets/d/1X-MNy0NTifGuB7iSXcfjdncdHk1J2hujM0oi4j-0Rww/edit?gid=0#gid=0" class="form-link" target="_blank">View Sheet →</a>
             </div>
-            
-         </div>
+
+            <div class="form-card" data-title="document approval log" data-desc="approved documents log">
+                <div class="form-title">Document Approval Log</div>
+                <div class="form-description">View approved documents log.</div>
+                <a href="https://docs.google.com/spreadsheets/d/18KZmM16zXQjUOTTIJ6pbmoultOPCdKl3FxTYs4VxUbU/edit?gid=1272537285#gid=1272537285" class="form-link" target="_blank">View Sheet →</a>
+            </div>
+        </div>
 
         <div class="no-results" id="noResults">
             No forms found matching your search.
